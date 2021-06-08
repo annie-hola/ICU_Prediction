@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>ICU Prediction</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="assets/multistepform/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="intro-img">
+    <img src="./Assets/ICU Pic.jpg" class="img-responsive" alt="Covid10">
+</div>
+<!-- MultiStep Form -->
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form id="msform">
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Thông tin bệnh nhân</li>
+                <li>Thông tin các chỉ số</li>
+                <li>Hoàn thành</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+                <h2 class="fs-title">THÔNG TIN BỆNH NHÂN</h2>
+                <h3 class="fs-subtitle">Điền thông tin cơ bản của bệnh nhân</h3>
+                <input type="text" name="fname" placeholder="Họ và tên"/>
+                <input type="text" name="lname" placeholder="Số điện thoại"/>
+                <input type="text" name="phone" placeholder="Email"/>
+                <input type="button" name="next" class="next action-button" value="Tiếp theo"/>
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">THÔNG TIN CÁC CHỈ SỐ</h2>
+                <h3 class="fs-subtitle">Thông tin chỉ số đầy đủ giúp dự đoán của phần mềm đúng hơn</h3>
+                <label for="PATIENT_VISIT_IDENTIFIER">PATIENT_VISIT_IDENTIFIER</label>
+                    <input type="number" name="PATIENT_VISIT_IDENTIFIER" placeholder="Số"/>
+                <label for="AGE_PERCENTIL">AGE_ABOVE65</label>
+                    <input type="number" name="AGE_PERCENTIL" placeholder="0 hoặc 1"/>
+                <label for="FormInput3">AGE_PERCENTIL</label>
+                    <input type="text" name="GENDER" placeholder="Số + th"/>
+                <label for="GENDER">GENDER</label>
+                    <input type="number" name="DISEASE GROUPING 1" placeholder="GENDER" placeholder="0 hoặc 1"/>
+                <label for="DISEASE GROUPING 1">DISEASEGROUP1</label>
+                    <input type="number" name="DISEASE GROUPING 2" placeholder="0 hoặc 1"/>
+                <label for="DISEASE GROUPING 2">DISEASEGROUP2</label>
+                    <input type="number" name="DISEASE GROUPING 3"  placeholder="0 hoặc 1"/>
+                <label for="DISEASE GROUPING 3">DISEASEGROUP3</label>
+                    <input type="number" name="DISEASE GROUPING 4" placeholder="0 hoặc 1"/>
+                <label for="DISEASE GROUPING 4">DISEASEGROUP4</label>
+                    <input type="number" name="DISEASE GROUPING 5"  placeholder="0 hoặc 1"/>
+                <label for="DISEASE GROUPING 5">DISEASEGROUP5</label>
+                    <input type="number" name="DISEASE GROUPING 6" placeholder="0 hoặc 1"/>
+                <label for="DISEASE GROUPING 6">DISEASEGROUP6</label>
+                    <input type="number" name="DISEASE GROUPING 6" placeholder="0 hoặc 1"/>
+                <label for="FormInput12">HTN</label>
+                    <input type="number" name="HTN" placeholder="0 hoặc 1"/>
+                <label for="IMMUNOCOMPROMISED">IMMUNOCOMPROMISED</label>
+                    <input type="number" name="IMMUNOCOMPROMISED" placeholder="0 hoặc 1"/>
+                <label for="OTHER">OTHER</label>
+                    <input type="number" name="OTHER" placeholder="0 hoặc 1"/>
+                <label for="ALBUMIN_MEDIAN">ALBUMIN_MEDIAN</label>
+                    <input type="number" name="ALBUMIN_MEDIAN" placeholder="Số"/>
+                <label for="ALBUMIN_MEAN">ALBUMIN_MEAN</label>
+                    <input type="number" name="ALBUMIN_MEAN" placeholder="Số"/>
+                <label for="ALBUMIN_MIN">ALBUMIN_MIN</label>
+                    <input type="number" name="ALBUMIN_MIN" placeholder="Số"/>
+                <label for="ALBUMIN_MAX">ALBUMIN_MAX</label>
+                    <input type="number" name="ALBUMIN_MAX" placeholder="Số"/>
+                <label for="ALBUMIN_DIFF">ALBUMIN_DIFF</label>
+                    <input type="number" name="ALBUMIN_DIFF"  placeholder="Số"/>
+                <label for="BE_ARTERIAL_MEDIAN">BE_ARTERIAL_MEDIAN</label>
+                    <input type="number" name="BE_ARTERIAL_MEDIAN" placeholder="Số"/>
+                <label for="BE_ARTERIAL_MEAN">BE_ARTERIAL_MEAN</label>
+                    <input type="number" name="BE_ARTERIAL_MEAN" placeholder="Số"/>
+                <label for="BE_ARTERIAL_MIN">BE_ARTERIAL_MIN</label>
+                    <input type="number" name="BE_ARTERIAL_MIN" placeholder="Số"/>
+                <label for="BE_ARTERIAL_MAX">BE_ARTERIAL_MAX</label>
+                    <input type="number" name="BE_ARTERIAL_MAX" placeholder="Số"/>
+                <label for="BE_ARTERIAL_DIFF">BE_ARTERIAL_DIFF</label>
+                    <input type="number" name="BE_ARTERIAL_DIFF" placeholder="Số"/>
+                <label for="BE_VENOUS_MEDIAN">BE_VENOUS_MEDIAN</label>
+                    <input type="number" name="BE_VENOUS_MEDIAN" placeholder="Số"/>
+                <label for="BE_VENOUS_MEAN">BE_VENOUS_MEAN</label>
+                    <input type="number" name="BE_VENOUS_MEAN" placeholder="Số"/>
+                <label for="BE_VENOUS_MIN">BE_VENOUS_MIN</label>
+                    <input type="number" name="BE_VENOUS_MIN" placeholder="Số"/>
+                <label for="BE_VENOUS_MAX">BE_VENOUS_MAX</label>
+                    <input type="number" name="BE_VENOUS_MAX" placeholder="Số"/>
+                <label for="BE_VENOUS_DIFF">BE_VENOUS_DIFF</label>
+                    <input type="number" name="BE_VENOUS_DIFF" placeholder="Số"/>
+                <label for="BIC_ARTERIAL_MEDIAN">BIC_ARTERIAL_MEDIAN</label>
+                    <input type="number" name="BIC_ARTERIAL_MEDIAN" placeholder="Số"/>
+                <label for="BIC_ARTERIAL_MEAN">BIC_ARTERIAL_MEAN</label>
+                    <input type="number" name="BIC_ARTERIAL_MEAN" placeholder="Số"/>
+                <label for="BIC_ARTERIAL_MIN">BIC_ARTERIAL_MIN</label>
+                    <input type="number" name="BIC_ARTERIAL_MIN" placeholder="Số"/>
+                <label for="BIC_ARTERIAL_MAX">BIC_ARTERIAL_MAX</label>
+                    <input type="number" name="BIC_ARTERIAL_MAX" placeholder="Số"/>
+                <label for="BIC_ARTERIAL_DIFF">BIC_ARTERIAL_DIFF</label>
+                    <input type="number" name="BIC_ARTERIAL_DIFF" placeholder="Số"/>
+                <label for="BIC_VENOUS_MEDIAN">BIC_VENOUS_MEDIAN</label>
+                    <input type="number" name="BIC_VENOUS_MEDIAN" placeholder="Số"/>
+                <label for="BIC_VENOUS_MEAN">BIC_VENOUS_MEAN</label>
+                    <input type="number" name="BIC_VENOUS_MEAN" placeholder="Số"/>
+                <label for="BIC_VENOUS_MIN">BIC_VENOUS_MIN</label>
+                    <input type="number" name="BIC_VENOUS_MIN" placeholder="Số"/>
+                <label for="BIC_VENOUS_MAX">BIC_VENOUS_MAX</label>
+                    <input type="number" name="BIC_VENOUS_MAX" placeholder="Số"/>
+                <label for="BIC_VENOUS_DIFF">BIC_VENOUS_DIFF</label>
+                    <input type="number" name="BIC_VENOUS_DIFF" placeholder="Số"/>
+                <label for="BILLIRUBIN_MEDIAN">BILLIRUBIN_MEDIAN</label>
+                    <input type="number" name="BILLIRUBIN_MEDIAN" placeholder="Số"/>
+                <label for="BILLIRUBIN_MEAN">BILLIRUBIN_MEAN</label>
+                    <input type="number" name="BILLIRUBIN_MEAN" placeholder="Số"/>
+                <label for="BILLIRUBIN_MIN">BILLIRUBIN_MIN</label>
+                    <input type="number" name="BILLIRUBIN_MIN" placeholder="Số"/>
+                <label for="BILLIRUBIN_MAX">BILLIRUBIN_MAX</label>
+                    <input type="number" name="BILLIRUBIN_MAX" placeholder="Số"/>
+                <label for="BILLIRUBIN_DIFF">BILLIRUBIN_DIFF</label>
+                    <input type="number" name="BILLIRUBIN_DIFF" placeholder="Số"/>
+                <label for="BLAST_MEDIAN">BLAST_MEDIAN</label>
+                    <input type="number" name="BLAST_MEDIAN" placeholder="Số"/>
+                <label for="BLAST_MEAN">BLAST_MEAN</label>
+                    <input type="number" name="BLAST_MEAN" placeholder="Số"/>
+                <label for="BLAST_MIN">BLAST_MIN</label>
+                    <input type="number" name="BLAST_MIN" placeholder="Số"/>
+                <label for="BLAST_MAX">BLAST_MAX</label>
+                    <input type="number" name="BLAST_MAX" placeholder="Số"/>
+                <label for="BLAST_DIFF">BLAST_DIFF</label>
+                    <input type="number" name="BLAST_DIFF" placeholder="Số"/>
+                <label for="CALCIUM_MEDIAN">CALCIUM_MEDIAN</label>
+                    <input type="number" name="CALCIUM_MEDIAN" placeholder="Số"/>
+                <label for="CALCIUM_MEAN">CALCIUM_MEAN</label>
+                    <input type="number" name="CALCIUM_MEAN" placeholder="Số"/>
+                <label for="CALCIUM_MIN">CALCIUM_MIN</label>
+                    <input type="number" name="CALCIUM_MIN" placeholder="Số"/>
+                <label for="CALCIUM_MAX">CALCIUM_MAX</label>
+                    <input type="number" name="CALCIUM_MAX" placeholder="Số"/>
+                <label for="CALCIUM_DIFF">CALCIUM_DIFF</label>
+                    <input type="number" name="CALCIUM_DIFF" placeholder="Số"/>
+                <label for="CREATININ_MEDIAN">CREATININ_MEDIAN</label>
+                    <input type="number" name="CREATININ_MEDIAN" placeholder="Số"/>
+                <label for="CREATININ_MEAN">CREATININ_MEAN</label>
+                    <input type="number" name="CREATININ_MEAN" placeholder="Số"/>
+                <label for="CREATININ_MIN">CREATININ_MIN</label>
+                    <input type="number" name="CREATININ_MIN" placeholder="Số"/>
+                <label for="CREATININ_MAX">CREATININ_MAX</label>
+                    <input type="number" name="CREATININ_MAX" placeholder="Số"/>
+                <label for="CREATININ_DIFF">CREATININ_DIFF</label>
+                    <input type="number" name="CREATININ_DIFF" placeholder="Số"/>
+                <label for="FFA_MEDIAN">FFA_MEDIAN</label>
+                    <input type="number" name="FFA_MEDIAN" placeholder="Số"/>
+                <label for="FFA_MEAN">FFA_MEAN</label>
+                    <input type="number" name="FFA_MEAN" placeholder="Số"/>
+                <label for="FFA_MIN">FFA_MIN</label>
+                    <input type="number" name="FFA_MIN" placeholder="Số"/>
+                <label for="FFA_MAX">FFA_MAX</label>
+                    <input type="number" name="FFA_MAX" placeholder="Số"/>
+                <label for="FFA_DIFF">FFA_DIFF</label>
+                    <input type="number" name="FFA_DIFF" placeholder="Số"/>
+                <label for="GGT_MEDIAN">GGT_MEDIAN</label>
+                    <input type="number" name="GGT_MEDIAN" placeholder="Số"/>
+                <label for="GGT_MEAN">GGT_MEAN</label>
+                    <input type="number" name="GGT_MEAN" placeholder="Số"/>
+                <label for="GGT_MIN">GGT_MIN</label>
+                    <input type="number" name="GGT_MIN" placeholder="Số"/>
+                <label for="GGT_MAX">GGT_MAX</label>
+                    <input type="number" name="GGT_DIFF" placeholder="Số"/>
+                <label for="GGT_DIFF">GGT_DIFF</label>
+                    <input type="number" name="GLUCOSE_MEDIAN" placeholder="Số"/>
+                <label for="GLUCOSE_MEDIAN">GLUCOSE_MEDIAN</label>
+                    <input type="number" name="GLUCOSE_MEAN" placeholder="Số"/>
+                <label for="GLUCOSE_MIN">GLUCOSE_MIN</label>
+                    <input type="number" name="GLUCOSE_MIN" placeholder="Số"/>
+                <label for="GLUCOSE_MAX">GLUCOSE_MAX</label>
+                    <input type="number" name="GLUCOSE_MAX" placeholder="Số"/>
+                <label for="GLUCOSE_DIFF">GLUCOSE_DIFF</label>
+                    <input type="number" name="GLUCOSE_DIFF" placeholder="Số"/>
+                <label for="HEMATOCRITE_MEDIAN">HEMATOCRITE_MEDIAN</label>
+                    <input type="number" name="HEMATOCRITE_MEDIAN" placeholder="Số"/>
+                <label for="HEMATOCRITE_MEAN">HEMATOCRITE_MEAN</label>
+                    <input type="number" name="HEMATOCRITE_MEAN" placeholder="Số"/>
+                <label for="HEMATOCRITE_MIN">HEMATOCRITE_MIN</label>
+                    <input type="number" name="HEMATOCRITE_MIN" placeholder="Số"/>
+                <label for="HEMATOCRITE_MAX">HEMATOCRITE_MAX</label>
+                    <input type="number" name="HEMATOCRITE_MAX" placeholder="Số"/>
+                <label for="HEMATOCRITE_DIFF">HEMATOCRITE_DIFF</label>
+                    <input type="number" name="HEMATOCRITE_DIFF" placeholder="Số"/>
+                <label for="HEMOGLOBIN_MEAN">HEMOGLOBIN_MEAN</label>
+                    <input type="number" name="HEMOGLOBIN_MEAN" placeholder="Số"/>
+                <label for="HEMOGLOBIN_MAX">HEMOGLOBIN_MAX</label>
+                    <input type="number" name="HEMOGLOBIN_MAX" placeholder="Số"/>
+                <label for="HEMOGLOBIN_DIFF">HEMOGLOBIN_DIFF</label>
+                    <input type="number" name="HEMOGLOBIN_DIFF" placeholder="Số"/>
+                <label for="INR_MEDIAN">INR_MEDIAN</label>
+                    <input type="number" name="INR_MEDIAN" placeholder="Số"/>
+                <label for="INR_MEAN">INR_MEAN</label>
+                    <input type="number" name="INR_MEAN" placeholder="Số"/>
+                <label for="INR_MIN">INR_MIN</label>
+                    <input type="number" name="INR_MIN" placeholder="Số"/>
+                <label for="INR_MAX">INR_MAX</label>
+                    <input type="number" name="INR_MAX" placeholder="Số"/>
+                <label for="INR_DIFF">INR_DIFF</label>
+                    <input type="number" name="INR_DIFF" placeholder="Số"/>
+                <label for="LACTATE_MEDIAN">LACTATE_MEDIAN</label>
+                    <input type="number" name="LACTATE_MEDIAN" placeholder="Số"/>
+                <label for="LACTATE_MEAN">LACTATE_MEAN</label>
+                    <input type="number" name="LACTATE_MEAN" placeholder="Số"/>
+                <label for="LACTATE_MIN">LACTATE_MIN</label>
+                    <input type="number" name="LACTATE_MIN" placeholder="Số"/>
+                <label for="LACTATE_MAX">LACTATE_MAX</label>
+                    <input type="number" name="LACTATE_MAX" placeholder="Số"/>
+                <label for="LEUKOCYTES_MEDIAN">LEUKOCYTES_MEDIAN</label>
+                    <input type="number" name="LEUKOCYTES_MEDIAN" placeholder="Số"/>
+                <label for="LEUKOCYTES_MEAN">LEUKOCYTES_MEAN</label>
+                    <input type="number" name="LEUKOCYTES_MEAN" placeholder="Số"/>
+                <label for="LEUKOCYTES_MIN">LEUKOCYTES_MIN</label>
+                    <input type="number" name="LEUKOCYTES_MIN" placeholder="Số"/>
+                <label for="LEUKOCYTES_MAX">LEUKOCYTES_MAX</label>
+                    <input type="number" name="LEUKOCYTES_MAX" placeholder="Số"/>
+                <label for="LEUKOCYTES_DIFF">LEUKOCYTES_DIFF</label>
+                    <input type="number" name="LEUKOCYTES_DIFF" placeholder="Số"/>
+                <label for="LINFOCITOS_MEDIAN">LINFOCITOS_MEDIAN</label>
+                    <input type="number" name="LINFOCITOS_MEDIAN" placeholder="Số"/>
+                <label for="LINFOCITOS_MEAN">LINFOCITOS_MEAN</label>
+                    <input type="number" name="LINFOCITOS_MEAN" placeholder="Số"/>
+                <label for="LINFOCITOS_MIN">LINFOCITOS_MIN</label>
+                    <input type="number" name="LINFOCITOS_MIN" placeholder="Số"/>
+                <label for="LINFOCITOS_MAX">LINFOCITOS_MAX</label>
+                    <input type="number" name="LINFOCITOS_MAX" placeholder="Số"/>
+                <label for="LINFOCITOS_DIFF">LINFOCITOS_DIFF</label>
+                    <input type="number" name="LINFOCITOS_DIFF" placeholder="Số"/>
+                <label for="NEUTROPHILES_MEDIAN">NEUTROPHILES_MEDIAN</label>
+                    <input type="number" name="NEUTROPHILES_MEDIAN" placeholder="Số"/>
+                <label for="NEUTROPHILES_MEAN">NEUTROPHILES_MEAN</label>
+                    <input type="number" name="NEUTROPHILES_MEAN" placeholder="Số"/>
+                <label for="NEUTROPHILES_MIN">NEUTROPHILES_MIN</label>
+                    <input type="number" name="NEUTROPHILES_MIN" placeholder="Số"/>
+                <label for="NEUTROPHILES_MAX">NEUTROPHILES_MAX</label>
+                    <input type="number" name="NEUTROPHILES_MAX" placeholder="Số"/>
+                <label for="GGT_MEAN">NEUTROPHILES_DIFF</label>
+                    <input type="NEUTROPHILES_DIFF" name="NEUTROPHILES_DIFF" placeholder="Số"/>
+                <label for="P02_ARTERIAL_MEDIAN">P02_ARTERIAL_MEDIAN</label>
+                    <input type="number" name="P02_ARTERIAL_MEDIAN" placeholder="Số"/>
+                <label for="P02_ARTERIAL_MEAN">P02_ARTERIAL_MEAN</label>
+                    <input type="number" name="P02_ARTERIAL_MEAN" placeholder="Số"/>
+                <label for="P02_ARTERIAL_MIN">P02_ARTERIAL_MIN</label>
+                    <input type="number" name="P02_ARTERIAL_MIN" placeholder="Số"/>
+                <label for="P02_ARTERIAL_MAX">P02_ARTERIAL_MAX</label>
+                    <input type="number" name="P02_ARTERIAL_MAX" placeholder="Số"/>
+                <label for="P02_ARTERIAL_DIFF">P02_ARTERIAL_DIFF</label>
+                    <input type="number" name="P02_ARTERIAL_DIFF" placeholder="Số"/>
+                <label for="P02_VENOUS_MEDIAN">P02_VENOUS_MEDIAN</label>
+                    <input type="number" name="P02_VENOUS_MEDIAN" placeholder="Số"/>
+                <label for="P02_VENOUS_MEAN">P02_VENOUS_MEAN</label>
+                    <input type="number" name="P02_VENOUS_MEAN" placeholder="Số"/>
+                <label for="P02_VENOUS_MIN">P02_VENOUS_MIN</label>
+                    <input type="number" name="P02_VENOUS_MIN" placeholder="Số"/>
+                <label for="P02_VENOUS_MAX">P02_VENOUS_MAX</label>
+                    <input type="number" name="P02_VENOUS_MAX" placeholder="Số"/>
+                <label for="P02_VENOUS_DIFF">P02_VENOUS_DIFF</label>
+                    <input type="number" name="P02_VENOUS_DIFF" placeholder="Số"/>
+                <label for="PC02_ARTERIAL_MEDIAN">PC02_ARTERIAL_MEDIAN</label>
+                    <input type="number" name="PC02_ARTERIAL_MEDIAN" placeholder="Số"/>
+                <label for="PC02_ARTERIAL_MEAN">PC02_ARTERIAL_MEAN</label>
+                    <input type="number" name="PC02_ARTERIAL_MEAN" placeholder="Số"/>
+                <label for="PC02_ARTERIAL_MIN">PC02_ARTERIAL_MIN</label>
+                    <input type="number" name="PC02_ARTERIAL_MIN" placeholder="Số"/>
+                <label for="PC02_ARTERIAL_MAX">PC02_ARTERIAL_MAX</label>
+                    <input type="number" name="PC02_ARTERIAL_MAX" placeholder="Số"/>
+                <label for="PC02_ARTERIAL_DIFF">PC02_ARTERIAL_DIFF</label>
+                    <input type="number" name="PC02_ARTERIAL_DIFF" placeholder="Số"/>
+                <label for="PC02_VENOUS_MEDIAN">PC02_VENOUS_MEDIAN</label>
+                    <input type="number" name="PC02_VENOUS_MEDIAN" placeholder="Số"/>
+                <label for="PC02_VENOUS_MEAN">PC02_VENOUS_MEAN</label>
+                    <input type="number" name="PC02_VENOUS_MEAN" placeholder="Số"/>
+                <label for="PC02_VENOUS_MIN">PC02_VENOUS_MIN</label>
+                    <input type="number" name="PC02_VENOUS_MIN" placeholder="Số"/>
+                <label for="PC02_VENOUS_MAX">PC02_VENOUS_MAX</label>
+                    <input type="number" name="PC02_VENOUS_MAX" placeholder="Số"/>
+                <label for="PC02_VENOUS_DIFF">PC02_VENOUS_DIFF</label>
+                    <input type="number" name="PC02_VENOUS_DIFF" placeholder="Số"/>
+                <label for="PCR_MEDIAN">PCR_MEDIAN</label>
+                    <input type="number" name="PCR_MEDIAN" placeholder="Số"/>
+                <label for="PCR_MEAN">PCR_MEAN</label>
+                    <input type="number" name="PCR_MEAN" placeholder="Số"/>
+                <label for="PCR_MAX">PCR_MAX</label>
+                    <input type="number" name="PCR_MAX" placeholder="Số"/>
+                <label for="PCR_DIFF">PCR_DIFF</label>
+                    <input type="number" name="PCR_DIFF" placeholder="Số"/>
+                <label for="PH_ARTERIAL_MEDIAN">PH_ARTERIAL_MEDIAN</label>
+                    <input type="number" name="PH_ARTERIAL_MEDIAN" placeholder="Số"/>
+                <label for="PH_ARTERIAL_MEAN">PH_ARTERIAL_MEAN</label>
+                    <input type="number" name="PH_ARTERIAL_MEAN" placeholder="Số"/>
+                <label for="PH_ARTERIAL_MIN">PH_ARTERIAL_MIN</label>
+                    <input type="number" name="PH_ARTERIAL_MIN" placeholder="Số"/>
+                <label for="PH_ARTERIAL_MAX">PH_ARTERIAL_MAX</label>
+                    <input type="number" name="PH_ARTERIAL_MAX" placeholder="Số"/>
+                <label for="PH_ARTERIAL_DIFF">PH_ARTERIAL_DIFF</label>
+                    <input type="number" name="PH_ARTERIAL_DIFF" placeholder="Số"/>
+                <label for="PH_VENOUS_MEDIAN">PH_VENOUS_MEDIAN</label>
+                    <input type="number" name="PH_VENOUS_MEDIAN" placeholder="Số"/>
+                <label for="PH_VENOUS_MEAN">PH_VENOUS_MEAN</label>
+                    <input type="number" name="PH_VENOUS_MEAN" placeholder="Số"/>
+                <label for="PH_VENOUS_MIN">PH_VENOUS_MIN</label>
+                    <input type="number" name="PH_VENOUS_MIN" placeholder="Số"/>
+                <label for="PH_VENOUS_MAX">PH_VENOUS_MAX</label>
+                    <input type="number" name="PH_VENOUS_MAX" placeholder="Số"/>
+                <label for="PH_VENOUS_DIFF">PH_VENOUS_DIFF</label>
+                    <input type="number" name="PH_VENOUS_DIFF" placeholder="Số"/>
+                <label for="PLATELETS_MEDIAN">PLATELETS_MEDIAN</label>
+                    <input type="number" name="PLATELETS_MEDIAN" placeholder="Số"/>
+                <label for="PLATELETS_MEAN">PLATELETS_MEAN</label>
+                    <input type="number" name="PLATELETS_MEAN" placeholder="Số"/>
+                <label for="PLATELETS_MIN">PLATELETS_MIN</label>
+                    <input type="number" name="PLATELETS_MIN" placeholder="Số"/>
+                <label for="PLATELETS_MAX">PLATELETS_MAX</label>
+                    <input type="number" name="PLATELETS_MAX" placeholder="Số"/>
+                <label for="PLATELETS_DIFF">PLATELETS_DIFF</label>
+                    <input type="number" name="PLATELETS_DIFF" placeholder="Số"/>
+                <label for="POTASSIUM_MEDIAN">POTASSIUM_MEDIAN</label>
+                    <input type="number" name="POTASSIUM_MEDIAN" placeholder="Số"/>
+                <label for="POTASSIUM_MEAN">POTASSIUM_MEAN</label>
+                    <input type="number" name="POTASSIUM_MEAN" placeholder="Số"/>
+                <label for="POTASSIUM_MIN">POTASSIUM_MIN</label>
+                    <input type="number" name="POTASSIUM_MIN" placeholder="Số"/>
+                <label for="POTASSIUM_MAX">POTASSIUM_MAX</label>
+                    <input type="number" name="POTASSIUM_MAX" placeholder="Số"/>
+                <label for="POTASSIUM_DIFF">POTASSIUM_DIFF</label>
+                    <input type="number" name="POTASSIUM_DIFF" placeholder="Số"/>
+                <label for="SAT02_ARTERIAL_MEDIAN">SAT02_ARTERIAL_MEDIAN</label>
+                    <input type="number" name="SAT02_ARTERIAL_MEDIAN" placeholder="Số"/>
+                <label for="SAT02_ARTERIAL_MEAN">SAT02_ARTERIAL_MEAN</label>
+                    <input type="number" name="SAT02_ARTERIAL_MEAN" placeholder="Số"/>
+                <label for="SAT02_ARTERIAL_MIN">SAT02_ARTERIAL_MIN</label>
+                    <input type="number" name="SAT02_ARTERIAL_MIN" placeholder="Số"/>
+                <label for="SAT02_ARTERIAL_MAX">SAT02_ARTERIAL_MAX</label>
+                    <input type="number" name="SAT02_ARTERIAL_MAX" placeholder="Số"/>
+                <label for="SAT02_ARTERIAL_DIFF">SAT02_ARTERIAL_DIFF</label>
+                    <input type="number" name="SAT02_ARTERIAL_DIFF" placeholder="Số"/>
+                <label for="SAT02_VENOUS_MEDIAN">SAT02_VENOUS_MEDIAN</label>
+                    <input type="number" name="SAT02_VENOUS_MEDIAN" placeholder="Số"/>
+                <label for="SAT02_VENOUS_MEAN">SAT02_VENOUS_MEAN</label>
+                    <input type="number" name="SAT02_VENOUS_MEAN" placeholder="Số"/>
+                <label for="SAT02_VENOUS_MIN">SAT02_VENOUS_MIN</label>
+                    <input type="number" name="SAT02_VENOUS_MIN" placeholder="Số"/>
+                <label for="SAT02_VENOUS_MAX">SAT02_VENOUS_MAX</label>
+                    <input type="number" name="SAT02_VENOUS_MAX" placeholder="Số"/>
+                <label for="SAT02_VENOUS_DIFF">SAT02_VENOUS_DIFF</label>
+                    <input type="number" name="SAT02_VENOUS_DIFF" placeholder="Số"/>
+                <label for="SODIUM_MEDIAN">SODIUM_MEDIAN</label>
+                    <input type="number" name="SODIUM_MEDIAN" placeholder="Số"/>
+                <label for="SODIUM_MEAN">SODIUM_MEAN</label>
+                    <input type="number" name="SODIUM_MEAN" placeholder="Số"/>
+                <label for="SODIUM_MIN">SODIUM_MIN</label>
+                    <input type="number" name="SODIUM_MIN" placeholder="Số"/>
+                <label for="SODIUM_MIN">SODIUM_MIN</label>
+                    <input type="number" name="SODIUM_MIN" placeholder="Số"/>
+                <label for="SODIUM_DIFF">SODIUM_DIFF</label>
+                    <input type="number" name="SODIUM_DIFF" placeholder="Số"/>
+                <label for="TGO_MEDIAN">TGO_MEDIAN</label>
+                    <input type="number" name="TGO_MEDIAN" placeholder="Số"/>
+                <label for="TGO_MEAN">TGO_MEAN</label>
+                    <input type="number" name="TGO_MEAN" placeholder="Số"/>
+                <label for="TGO_MIN">TGO_MIN</label>
+                    <input type="number" name="TGO_MIN" placeholder="Số"/>
+                <label for="TGO_MAX">TGO_MAX</label>
+                    <input type="number" name="TGO_MAX" placeholder="Số"/>
+                <label for="TGO_DIFF">TGO_DIFF</label>
+                    <input type="number" name="TGO_DIFF" placeholder="Số"/>
+                <label for="TGP_MEDIAN">TGP_MEDIAN</label>
+                    <input type="number" name="TGP_MEDIAN" placeholder="Số"/>
+                <label for="TGP_MEAN">TGP_MEAN</label>
+                    <input type="number" name="TGP_MEAN" placeholder="Số"/>
+                <label for="TGP_MIN">TGP_MIN</label>
+                    <input type="number" name="TGP_MIN" placeholder="Số"/>
+                <label for="TGP_MAX">TGP_MAX</label>
+                    <input type="number" name="TGP_MAX" placeholder="Số"/>
+                <label for="TGP_DIFF">TGP_DIFF</label>
+                    <input type="number" name="TGP_DIFF" placeholder="Số"/>
+                <label for="TTPA_MEDIAN">TTPA_MEDIAN</label>
+                    <input type="number" name="TTPA_MEDIAN" placeholder="Số"/>
+                <label for="TTPA_MEAN">TTPA_MEAN</label>
+                    <input type="number" name="TTPA_MEAN" placeholder="Số"/>
+                <label for="TTPA_MIN">TTPA_MIN</label>
+                    <input type="number" name="TTPA_MIN" placeholder="Số"/>
+                <label for="TTPA_MAX">TTPA_MAX</label>
+                    <input type="number" name="TTPA_MAX" placeholder="Số"/>
+                <label for="TTPA_DIFF">TTPA_DIFF</label>
+                    <input type="number" name="TTPA_DIFF" placeholder="Số"/>
+                <label for="UREA_MEDIAN">UREA_MEDIAN</label>
+                    <input type="number" name="UREA_MEDIAN" placeholder="Số"/>
+                <label for="UREA_MEAN">UREA_MEAN</label>
+                    <input type="number" name="UREA_MEAN" placeholder="Số"/>
+                <label for="UREA_MIN">UREA_MIN</label>
+                    <input type="number" name="UREA_MIN" placeholder="Số"/>
+                <label for="UREA_MAX">UREA_MAX</label>
+                    <input type="number" name="UREA_MAX" placeholder="Số"/>
+                <label for="UREA_DIFF">UREA_DIFF</label>
+                    <input type="number" name="UREA_DIFF" placeholder="Số"/>
+                <label for="DIMER_MEDIAN">DIMER_MEDIAN</label>
+                    <input type="number" name="DIMER_MEDIAN" placeholder="Số"/>
+                <label for="DIMER_MEAN">DIMER_MEAN</label>
+                    <input type="number" name="DIMER_MEAN" placeholder="Số"/>
+                <label for="DIMER_MIN">DIMER_MIN</label>
+                    <input type="number" name="DIMER_MIN" placeholder="Số"/>
+                <label for="DIMER_MAX">DIMER_MAX</label>
+                    <input type="number" name="DIMER_MAX" placeholder="Số"/>
+                <label for="DIMER_DIFF">DIMER_DIFF</label>
+                    <input type="number" name="DIMER_DIFF" placeholder="Số"/>
+                <label for="BLOODPRESSURE_DIASTOLIC_MEAN">BLOODPRESSURE_DIASTOLIC_MEAN</label>
+                    <input type="number" name="BLOODPRESSURE_DIASTOLIC_MEAN" placeholder="Số"/>
+                <label for="BLOODPRESSURE_SISTOLIC_MEAN">BLOODPRESSURE_SISTOLIC_MEAN</label>
+                    <input type="number" name="BLOODPRESSURE_SISTOLIC_MEAN" placeholder="Số"/>
+                <label for="HEART_RATE_MEAN">HEART_RATE_MEAN</label>
+                    <input type="number" name="HEART_RATE_MEAN" placeholder="Số"/>
+                <label for="RESPIRATORY_RATE_MEAN">RESPIRATORY_RATE_MEAN</label>
+                    <input type="number" name="RESPIRATORY_RATE_MEAN" placeholder="Số"/>
+                <label for="TEMPERATURE_MEAN">TEMPERATURE_MEAN</label>
+                    <input type="number" name="TEMPERATURE_MEAN" placeholder="Số"/>
+                <label for="OXYGEN_SATURATION_MEAN">OXYGEN_SATURATION_MEAN</label>
+                    <input type="number" name="OXYGEN_SATURATION_MEAN" placeholder="Số"/>
+                <label for="BLOODPRESSURE_DIASTOLIC_MEDIAN">BLOODPRESSURE_DIASTOLIC_MEDIAN</label>
+                    <input type="number" name="BLOODPRESSURE_DIASTOLIC_MEDIAN" placeholder="Số"/>
+                <label for="BLOODPRESSURE_SISTOLIC_MEDIAN">BLOODPRESSURE_SISTOLIC_MEDIAN</label>
+                    <input type="number" name="BLOODPRESSURE_SISTOLIC_MEDIAN" placeholder="Số"/>
+                <label for="HEART_RATE_MEDIAN">HEART_RATE_MEDIAN</label>
+                    <input type="number" name="HEART_RATE_MEDIAN" placeholder="Số"/>
+                <label for="RESPIRATORY_RATE_MEDIAN">RESPIRATORY_RATE_MEDIAN</label>
+                    <input type="number" name="RESPIRATORY_RATE_MEDIAN" placeholder="Số"/>
+                <label for="TEMPERATURE_MEDIAN">TEMPERATURE_MEDIAN</label>
+                    <input type="number" name="TEMPERATURE_MEDIAN" placeholder="Số"/>
+                <label for="OXYGEN_SATURATION_MEDIAN">OXYGEN_SATURATION_MEDIAN</label>
+                    <input type="number" name="OXYGEN_SATURATION_MEDIAN" placeholder="Số"/>
+                <label for="BLOODPRESSURE_DIASTOLIC_MIN">BLOODPRESSURE_DIASTOLIC_MIN</label>
+                    <input type="number" name="BLOODPRESSURE_DIASTOLIC_MIN" placeholder="Số"/>
+                <label for="BLOODPRESSURE_SISTOLIC_MIN">BLOODPRESSURE_SISTOLIC_MIN</label>
+                    <input type="number" name="BLOODPRESSURE_SISTOLIC_MIN" placeholder="Số"/>
+                <label for="RESPIRATORY_RATE_MIN">RESPIRATORY_RATE_MIN</label>
+                    <input type="number" name="RESPIRATORY_RATE_MIN" placeholder="Số"/>
+                <label for="TEMPERATURE_MIN">TEMPERATURE_MIN</label>
+                    <input type="number" name="TEMPERATURE_MIN" placeholder="Số"/>
+                <label for="OXYGEN_SATURATION_MIN">OXYGEN_SATURATION_MIN</label>
+                    <input type="number" name="OXYGEN_SATURATION_MIN" placeholder="Số"/>
+                <label for="BLOODPRESSURE_DIASTOLIC_MAX">BLOODPRESSURE_DIASTOLIC_MAX</label>
+                    <input type="number" name="BLOODPRESSURE_DIASTOLIC_MAX" placeholder="Số"/>
+                <label for="BLOODPRESSURE_SISTOLIC_MAX">BLOODPRESSURE_SISTOLIC_MAX</label>
+                    <input type="number" name="BLOODPRESSURE_SISTOLIC_MAX" placeholder="Số"/>
+                <label for="HEART_RATE_MAX">HEART_RATE_MAX</label>
+                    <input type="number" name="HEART_RATE_MAX" placeholder="Số"/>
+                <label for="RESPIRATORY_RATE_MAX">RESPIRATORY_RATE_MAX</label>
+                    <input type="number" name="RESPIRATORY_RATE_MAX" placeholder="Số"/>
+                <label for="TEMPERATURE_MAX">TEMPERATURE_MAX</label>
+                    <input type="number" name="TEMPERATURE_MAX" placeholder="Số"/>
+                <label for="OXYGEN_SATURATION_MAX">OXYGEN_SATURATION_MAX</label>
+                    <input type="number" name="OXYGEN_SATURATION_MAX" placeholder="Số"/>
+                <label for="BLOODPRESSURE_DIASTOLIC_DIFF">BLOODPRESSURE_DIASTOLIC_DIFF</label>
+                    <input type="number" name="BLOODPRESSURE_DIASTOLIC_DIFF" placeholder="Số"/>
+                <label for="BLOODPRESSURE_SISTOLIC_DIFF">BLOODPRESSURE_SISTOLIC_DIFF</label>
+                    <input type="number" name="BLOODPRESSURE_SISTOLIC_DIFF" placeholder="Số"/>
+                <label for="HEART_RATE_DIFF">HEART_RATE_DIFF</label>
+                    <input type="number" name="HEART_RATE_DIFF" placeholder="Số"/>
+                <label for="RESPIRATORY_RATE_DIFF">RESPIRATORY_RATE_DIFF</label>
+                    <input type="number" name="RESPIRATORY_RATE_DIFF" placeholder="Số"/>
+                <label for="TEMPERATURE_DIFF">TEMPERATURE_DIFF</label>
+                    <input type="number" name="TEMPERATURE_DIFF" placeholder="Số"/>
+                <label for="OXYGEN_SATURATION_DIFF">OXYGEN_SATURATION_DIFF</label>
+                    <input type="number" name="OXYGEN_SATURATION_DIFF" placeholder="Số"/>
+                <label for="BLOODPRESSURE_DIASTOLIC_DIFF_REL">BLOODPRESSURE_DIASTOLIC_DIFF_REL</label>
+                    <input type="number" name="BLOODPRESSURE_DIASTOLIC_DIFF_REL" placeholder="Số"/>
+                <label for="BLOODPRESSURE_SISTOLIC_DIFF_REL">BLOODPRESSURE_SISTOLIC_DIFF_REL</label>
+                    <input type="number" name="BLOODPRESSURE_SISTOLIC_DIFF_REL" placeholder="Số"/>
+                <label for="HEART_RATE_DIFF_REL">HEART_RATE_DIFF_REL</label>
+                    <input type="number" name="HEART_RATE_DIFF_REL" placeholder="Số"/>
+                <label for="RESPIRATORY_RATE_DIFF_REL">RESPIRATORY_RATE_DIFF_REL</label>
+                    <input type="number" name="RESPIRATORY_RATE_DIFF_REL" placeholder="Số"/>
+                <label for="TEMPERATURE_DIFF_REL">TEMPERATURE_DIFF_REL</label>
+                    <input type="number" name="TEMPERATURE_DIFF_REL" placeholder="Số"/>
+                <label for="OXYGEN_SATURATION_DIFF_REL">OXYGEN_SATURATION_DIFF_REL</label>
+                    <input type="text" name="OXYGEN_SATURATION_DIFF_REL" placeholder="khoảng thời gian vào viện"/>
+                <label for="WINDOW">WINDOW</label>
+                    <input type="number" name="WINDOW" placeholder="Số"/>
+                <input type="button" name="previous" class="previous action-button-previous" value="Quay lại"/>
+                <input type="button" name="next" class="next action-button" value="Tiếp theo"/>
+            </fieldset>
+            <fieldset>
+                <img src="./Assets/success.png" alt="Done" style="width:100px;height:100px;">
+                <h2 class="fs-title">Hoàn thành điền</h2>
+                <h3 class="fs-subtitle">Kiểm tra lại kỹ thông số trước khi dự đoán</h3>
+                <input type="button" name="previous" class="previous action-button-previous" value="Quay lại"/>
+                <input type="submit" name="submit" class="submit action-button" value="Dự đoán"/>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!-- /.MultiStep Form -->
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/multistepform/js/msform.js"></script>
+
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
